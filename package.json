@@ -1,4 +1,22 @@
 {
+  "name": "notes-backend",
+  "description": "Notes =====",
+  "version": "1.0.0",
+  "main": "notes.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slebetman/notes-backend.git"
+  },
+  "author": "slebetman@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slebetman/notes-backend/issues"
+  },
+  "homepage": "https://github.com/slebetman/notes-backend#readme",
   "dependencies": {
     "config-default-cjson": "^1.0.2",
     "cors": "^2.8.5",
