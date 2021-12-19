@@ -6,7 +6,7 @@ const bodyparser = require('body-parser');
  * @param {express.Router} app 
  */
 module.exports = function (app) {
-	app.get('/notes/list',(req, res, next) => {
+	app.get('/notes/list', async (req, res, next) => {
 		try {
 			const list = await notes.getNotes();
 
@@ -36,7 +36,7 @@ module.exports = function (app) {
 		}
 	});
 
-	app.post('/notes/new', bodyparser.json(), (req, res, next) => {
+	app.post('/notes/new', bodyparser.json(), async (req, res, next) => {
 		const title   = req.body.title;
 		const content = req.body.content;
 		const color   = req.body.color;
@@ -53,7 +53,7 @@ module.exports = function (app) {
 		}
 	});
 
-	app.post('/notes/edit/:id', bodyparser.json(), (req, res, next) => {
+	app.post('/notes/edit/:id', bodyparser.json(), async (req, res, next) => {
 		const note_id = req.params.id;
 		const title   = req.body.title;
 		const content = req.body.content;
@@ -71,7 +71,7 @@ module.exports = function (app) {
 		}
 	});
 
-	app.post('/notes/delete/:id', (req, res, next) => {
+	app.post('/notes/delete/:id', async (req, res, next) => {
 		const note_id = req.params.id;
 
 		try {
