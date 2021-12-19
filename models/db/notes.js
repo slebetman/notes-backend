@@ -9,7 +9,7 @@ function getNotes () {
 }
 
 function getNoteById (id) {
-	return db('notes').where({ id });
+	return db('notes').where({ id }).first();
 }
 
 function createNote (title, content, color) {
