@@ -1,11 +1,7 @@
 const db = require('../db');
 
 function getNotes () {
-	return db('notes').select([
-		'id',
-		'title',
-		'color',
-	]);
+	return db('notes');
 }
 
 function getNoteById (id) {
@@ -21,11 +17,13 @@ function createNote (title, content, color) {
 }
 
 function updateNote (id, title, content, color) {
-	return db('notes').where({ id }).update({
+	let data = {
 		title,
 		content,
 		color,
-	});
+	};
+	console.log(data);
+	return db('notes').where({ id }).update(data);
 }
 
 function deleteNote (id) {
