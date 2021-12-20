@@ -17,13 +17,11 @@ function createNote (title, content, color) {
 }
 
 function updateNote (id, title, content, color) {
-	let data = {
+	return db('notes').where({ id }).update({
 		title,
 		content,
 		color,
-	};
-	console.log(data);
-	return db('notes').where({ id }).update(data);
+	});
 }
 
 function deleteNote (id) {
