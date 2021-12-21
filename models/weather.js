@@ -11,10 +11,8 @@ function getWeather () {
 
 	return fetch(URL).then(x => x.json()).then(x => {
 		return {
-			weather: {
-				description: x.weather[0].description,
-				icon: `http://openweathermap.org/img/wn/${x.weather[0].icon}.png`
-			},
+			description: x.weather[0].description,
+			icon: `http://openweathermap.org/img/wn/${x.weather[0].icon}.png`,
 			temperature: x.main.temp,
 		}
 	});
