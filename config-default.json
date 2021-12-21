@@ -2,5 +2,9 @@
 	"port": 8080,
 	"db": {
 		"file": "./notes.db"
+	},
+	"openweathermap": {
+		"city": "Kuala Lumpur",
+		"api_key": ""
 	}
 }

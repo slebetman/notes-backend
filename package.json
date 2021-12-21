@@ -25,6 +25,7 @@
     "express-compress": "^0.8.0",
     "find": "^0.3.0",
     "knex": "^0.95.14",
+    "node-fetch": "^2.6.6",
     "nodemon": "^2.0.15",
     "sqlite3": "^5.0.2"
   }
