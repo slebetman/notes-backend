@@ -77,10 +77,12 @@ find.eachfile(/\.js$/, CONTROLLERS_DIR, module => {
 				console.log(`${api.comments.join('\n')}`);
 			}
 			if (api.params) {
-				console.log('\nrequest body:\n');
-				api.params.forEach(p => {
-					console.log('- ' + p);
+				console.log('\nrequest body:\n\n    {');
+				let params = api.params.map(p => {
+					return '        ' + p;
 				});
+				console.log(params.join(',\n'));
+				console.log('    }');
 			}
 		});
 	}
