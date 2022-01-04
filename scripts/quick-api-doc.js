@@ -36,6 +36,7 @@ find.eachfile(/\.js$/, CONTROLLERS_DIR, module => {
 			if (l.match(/^\w+\.(get|post|put|delete)/)) {
 				currentAPI = {}
 				l = l.replace(/^\w+\./,'')
+					.replace(/(get|post|put|delete)/, x => x.toUpperCase())
 					.replace(/[()]/g,' ')
 					.replace(/,\s*(async\s+)?req.*$/,'')
 					.replace(/auth\.protect/,'`LOGIN REQUIRED`')
