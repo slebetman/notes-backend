@@ -34,6 +34,8 @@ find.eachfile(/\.js$/, CONTROLLERS_DIR, module => {
 			l = l.trim();
 
 			if (l.match(/^\w+\.(get|post|put|delete)/)) {
+				// Start of endpoint
+
 				currentAPI = {}
 				l = l.replace(/^\w+\./,'')
 					.replace(/(get|post|put|delete)/, x => x.toUpperCase())
@@ -47,6 +49,8 @@ find.eachfile(/\.js$/, CONTROLLERS_DIR, module => {
 				API.push(currentAPI);
 			}
 			else if(l.match(/^\s*\/\*\*|^\s*\*/)) {
+				// Comments to include in documentation (must be inside the function)
+
 				if (currentAPI) {
 					l = l.replace(/[/*]/g,'').trim();
 					if (!currentAPI.comments) currentAPI.comments = [];
@@ -54,6 +58,8 @@ find.eachfile(/\.js$/, CONTROLLERS_DIR, module => {
 				}
 			}
 			else if(l.match(/req.body/)) {
+				// Request params
+
 				l = l.replace(/^.*=\s*req\.body\./,'')
 					.replace(/;\s*$/g,'');
 				if (!currentAPI.params) currentAPI.params = [];
