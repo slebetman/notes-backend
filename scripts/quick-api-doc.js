@@ -41,7 +41,8 @@ find.eachfile(/\.js$/, CONTROLLERS_DIR, module => {
 					.replace(/,\s*(async\s+)?req.*$/,'')
 					.replace(/auth\.protect/,'`LOGIN REQUIRED`')
 					.replace(/,\s*auth\.passport.*$/,'')
-					.replace(/,\s*bodyparser.*$/,'');
+					.replace(/,\s*bodyparser.*$/,'')
+					.replace(/'/g,'"');
 				currentAPI.url = l;
 				API.push(currentAPI);
 			}
